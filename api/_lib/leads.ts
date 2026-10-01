@@ -6,7 +6,9 @@ export const LEAD_SELECT =
 
 type Row = Record<string, unknown> & { lead_tags?: { tags: unknown }[] }
 
-export function shapeLead(row: Row) {
+export type LeadOut = Record<string, unknown> & { status?: string; tags: unknown[] }
+
+export function shapeLead(row: Row): LeadOut {
   const { lead_tags, ...rest } = row
   return { ...rest, tags: (lead_tags ?? []).map((lt) => lt.tags).filter(Boolean) }
 }
