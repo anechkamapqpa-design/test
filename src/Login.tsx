@@ -5,6 +5,7 @@ export default function Login({ onOk }: { onOk: () => void }) {
   const [code, setCode] = useState('')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
+  const [show, setShow] = useState(false)
 
   async function submit(e: React.FormEvent) {
     e.preventDefault()
@@ -28,13 +29,23 @@ export default function Login({ onOk }: { onOk: () => void }) {
       <form onSubmit={submit} className="mt-6 space-y-3">
         <label className="block text-sm text-slate-700">
           Код доступа
-          <input
-            autoFocus
-            type="password"
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-base outline-none focus:border-slate-500"
-          />
+          <div className="relative mt-1">
+            <input
+              autoFocus
+              type={show ? 'text' : 'password'}
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              className="w-full rounded-lg border border-slate-300 bg-white py-2 pl-3 pr-24 text-base outline-none focus:border-slate-500"
+            />
+            <button
+              type="button"
+              onClick={() => setShow(!show)}
+              aria-pressed={show}
+              className="absolute inset-y-0 right-0 px-3 text-sm text-slate-500 hover:text-slate-900"
+            >
+              {show ? 'Скрыть' : 'Показать'}
+            </button>
+          </div>
         </label>
         {error && <p className="text-sm text-red-600">{error}</p>}
         <button
