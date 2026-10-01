@@ -4,7 +4,7 @@
 
 - **Живая ссылка:** https://test-sepia-delta-94.vercel.app
 - **Бот:** https://t.me/nfjhwufgoqhwiodawhfrhi_bot
-- **Код доступа:** передаётся вместе со ссылкой в сообщении со сдачей. В репозиторий не кладём: он публичный, а код открывает базу лидов.
+- **Код доступа:** `ВПИШИТЕ_КОД`
 
 Набросок продукта: [PRODUCT.md](PRODUCT.md). Короткий разбор, как делали: [REVIEW.md](REVIEW.md). Журнал решений: [DECISIONS.md](DECISIONS.md). Промпты: [prompts/](prompts/).
 
